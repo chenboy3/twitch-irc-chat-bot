@@ -2,6 +2,11 @@
     This file is what connects to chat and parses messages as they come along. The chat client connects via a 
     Web Socket to Twitch chat. The important part events are onopen and onmessage.
 */
+var stats = function stats(numViewers, upTime, mostActiveUser, numComments, numParticipants, popularEmoticon, numEmoticons,
+    mostPopularCopyPasta, newCopyPasta, newSubs, peakViewers) {
+    this.numViewers = numViewers;
+}
+
 
 var chatClient = function chatClient(options){
     this.username = options.username;

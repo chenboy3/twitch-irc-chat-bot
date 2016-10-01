@@ -18,8 +18,8 @@
     
     <div class="button-list">
         <textarea id="channeltext" rows="4" cols="50" placeholder="Enter channel name to launch Stats Bot"></textarea>
-        <button class="connect btn">Connect to chat</button>
-        <button class="disconnect btn">Disconnect from chat</button>
+        <button class="connect btn">Connect and calculate stats</button>
+        <button class="disconnect btn">Disconnect and view results</button>
         <button class="display btn">Populate leaderboard</button>
     </div>
 
@@ -32,9 +32,8 @@
     <script>
     $(document).ready(function(){
         $('.connect').click(function(){
-            var channel = document.getElementById("channeltext").value;
+            var channel = document.getElementById("channeltext").value.toLowerCase();
             window.chatClient[channel] = '#' + channel;
-            console.log(window.chatClient[channel]);
             window.chatClient.open();
         });
         $('.disconnect').click(function(){
